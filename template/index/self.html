@@ -1,0 +1,155 @@
+{include file="index/header.html"}
+<link rel="stylesheet" href="{CSS_PATH}/bootstrap.css">
+<link rel="stylesheet" href="{CSS_PATH}/mui.min.css">
+<link rel="stylesheet" href="{CSS_PATH}/index/self.css">
+<script src="{JS_PATH}/admin/jquery.min.js"></script>
+<script src="{JS_PATH}/index/self.js"></script>
+<style>
+	.mui-media{
+		max-height: 110px;
+	}
+	span{
+		cursor: pointer!important;
+	}
+</style>
+<div class="container main">
+    <div class="row">
+        <div class="col-sm-8 main-left mainLeft" style="border-right: 0;margin-left:140px;">
+            <!--头像部分-->
+            <div class="container-fluid">
+                <div class="row touxiang">
+                    <div class="photo">
+                    	{if $self=="yes"}
+                    		{if $result3['photo']}
+                        	<img src="{$result3['photo']}" alt="" /><!--头像-->
+                        	{else}
+                        	<img src="{IMG_PATH}/bjt.jpg" alt="" />
+                        	{/if}
+                        {elseif $self=="no"}
+                        	{if $photo}
+                        	<img src="{$photo}" alt="" />
+                        	{else}
+                        	<img src="{IMG_PATH}/bjt.jpg" alt="" />
+                       		{/if}
+                        {/if}
+                    </div>
+                	<div class="col-sm-2  username">
+                		{if $self=="yes"}
+                			{if $result3['bname']}
+	                    	<span>{$result3['bname']} </span>
+	                    	{else}
+	                    	<span>{$uname}</span>
+	                    	{/if}
+	                    {elseif $self=="no"}
+	                    	<span>{$unames}</span>
+	                    {/if}
+	                </div>
+                    <div class="col-sm-2 photoes">
+                    	{if $self=="yes"}
+		                    <span class="guanzhu">已关注  </span><span>{count($result7)-1}</span>
+                        {elseif $self=="no"}
+	                        <span>对方关注  </span><span>{count($result8)-1}</span>
+                        {/if}
+                    </div>
+                    <div class="col-sm-2 photoes">
+                    	{if $self=="yes"}
+                        <span class="fensi">粉丝  </span><span>{count($result9)}</span>
+                        {elseif $self=="no"}
+                        <span>对方粉丝  </span><span>{count($result9)}</span>
+                        {/if}
+                        
+                    </div>
+                    <div class="col-sm-2 photoes">
+                    	{if $self=="yes"}
+	                    	
+                    	<span class="wenzhang" uid="{$uid}">文章  </span><span>{count($result)}</span>
+                        {elseif $self=="no"}
+                       
+                        <span class="otherwenzhang" uid="{$result5[0]['uid']}">对方文章  </span><span>{count($result5)}</span>
+                        {/if}
+                    </div>
+                    <div class="col-sm-2 photoes">
+                    	{if $self=="yes"}
+                       	<a href="">留言  </a> <span>{count($result11)}</span>
+                        {elseif $self=="no"}
+                       
+                        {/if}
+                    </div>
+                    
+                   
+                   
+                </div>
+            </div>
+  			<!--菜单部分-->
+            <div class="container-fluid menu">
+                <div class="row">
+                    <div class="col-sm-4">
+                    	{if $self=="yes"}
+                        <span class="wenzhang" uid="{$uid}">发表文章</span>
+                        <span>{count($result)}</span>
+                        {elseif $self=="no"}
+                       
+                        {/if}
+                    </div>
+                     <div class="col-sm-4">
+                    	{if $self=="yes"}
+                    	{$n=0}
+                        {foreach $result4 as $c}
+                        {$n=$n+1}
+                        {/foreach}
+                        <span class="shoucang">收藏文章</span>
+                        <span>{$n}</span>
+                        {elseif $self=="no"}
+                       
+                        {/if}
+                      	
+                    </div>
+                    <div class="col-sm-4">
+                    	{if $self=="yes"}
+                    	<span class="shenhe">审核情况</span>	
+                    	<span>{count($result10)}</span>
+                        {elseif $self=="no"}
+                       
+                        {/if}
+                    </div>
+                    <div class="col-sm-4 geren">
+                    	{if $self=="yes"}
+                       	<a style="color:#999;" href="index.php?m=index&f=user&a=personal&id={$uid}">个人资料</a>
+                        {elseif $self=="no"}
+                       	
+                        {/if}
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="line"></div>
+
+
+            <!--具体的内容-->
+
+            <ul class="mui-table-view NR" style="background: rgba(0,0,0,0);">
+            	{if $self=="yes"}
+            	{foreach $result as $v}
+            	<li class="mui-table-view-cell mui-media">
+                    <a href="index.php?m=index&f=index&a=show&id={$v['sid']}">
+                        <div class="mui-media-body">
+                        	<span class="stitle">{$v["stitle"]}</span>
+                            <p class="mui-ellipsis scon">{$v["scon"]}</p>
+                        </div>
+                    </a>
+                </li>
+                {/foreach}
+                {elseif $self=="no"}
+            	{/if}
+            </ul>
+            		
+	
+			
+        </div>
+       
+    </div>
+</div>
+	</body>
+</html>

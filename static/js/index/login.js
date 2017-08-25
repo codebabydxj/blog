@@ -1,0 +1,30 @@
+$(window).ready(function(){
+function yanzheng(){
+    $("#form1").validate({
+		rules:{
+   			 uname:{
+       		     required:true
+    		 },
+		     upass:{
+		         required:true
+		     },
+		     code:{
+		         required:true
+		     }
+        },
+		messages:{
+		    uname:{
+		        required:"*请输入用户名"
+		    },
+		    upass:{
+		        required:"*请输入密码"
+		    },
+			code:{
+		        required:"*请输入验证码"
+		    }
+		}
+	})
+}
+yanzheng();
+
+})

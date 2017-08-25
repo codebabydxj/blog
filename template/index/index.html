@@ -1,0 +1,145 @@
+{include file="index/header.html"}
+<link rel="stylesheet" href="{CSS_PATH}/bootstrap.css">
+<link rel="stylesheet" href="{CSS_PATH}/mui.min.css">
+<script src="{JS_PATH}/admin/jquery.min.js"></script>
+<script src="{JS_PATH}/mui.js"></script>
+<script src="{JS_PATH}/index/index.js"></script>
+<link rel="stylesheet" href="{CSS_PATH}/bootstrap.css">
+<link rel="stylesheet" href="{CSS_PATH}/mui.min.css">
+<link rel="stylesheet" href="{CSS_PATH}/index/index.css" />
+<style>
+	.clearmoren span,.clearmoren a{
+		font-size:16px!important;
+		color:#454545!important;
+		background-color:rgba(0,0,0,0)!important ;
+		cursor: pointer;
+	}
+	.clearmoren span.stitle{
+		transition: margin-left 0.5s linear;
+	}
+	.clearmoren span.stitle:hover{
+		margin-left:20px;
+	}
+	.clearmoren p{
+		font-size:12px ;
+	}
+</style>
+<!--文章动态-->
+<div class="container main">
+    <div class="row">
+    	<div class="col-sm-4 main-left">
+    		{if $uname}
+			<div class="top">
+				<div class="photoimg">
+					<img src="{$result3['photo']}" alt="">
+					<div class="names">青轻飞扬</div>
+				</div>
+				<h1 class="yulu">{$result3['introduce']}</h1>
+			</div>
+			{else}
+			<div class="top">
+				<div class="photoimg">
+					<img src="{IMG_PATH}/timgs.jpg" alt="">
+					<div class="names">青轻飞扬</div>
+				</div>
+			</div>
+			{/if}
+			<div class="jiyu">
+				<h1>执子之手，与子偕老</h1>
+				<p>于千万人之中，我遇见了我所遇见的人. . . .</p>
+			</div>
+            <div class="list-group bang">
+                <a href="javascript:;" class="active">
+                   			热门榜
+                </a>
+                {foreach $liulan as $x}
+                <a href="index.php?m=index&f=index&a=show&id={$x['sid']}" class="list-group-item" style="">{$x["stitle"]}  ({$x["hits"]})</a>
+                {/foreach}
+            </div>
+            <div class="list-group">
+                <a href="javascript:;" class="active">
+                   			 新鲜事
+                </a>
+                {foreach $dianzan as $y}
+                <a href="index.php?m=index&f=index&a=show&id={$x['sid']}" class="list-group-item" >{$y["stitle"]}  ({$y["good"]})</a>
+                {/foreach}
+            </div>
+        </div>
+        <div class="col-sm-8 main-right neirong">
+            {foreach $result as $v}
+            <div class="usercon">
+            	 <!--头像部分-->
+	            <div class="container-fluid">
+	                <div class="row user">
+	                    <div class="photo">
+	                    	{if $v['photo']}
+	                 		<img src="{$v['photo']}" alt="" />
+	                 		{else}
+	                 		<img src="{IMG_PATH}/timgs.jpg" alt="" />
+	                 		{/if}
+	                    </div>
+	                    <div class="col-sm-2 photoes username">
+	                    	{if $v["bname"]}
+	                        <a href="index.php?m=index&f=index&a=you&id={$v['uid']}">{$v["bname"]}</a>
+	                        {else}
+	                        <a href="index.php?m=index&f=index&a=you&id={$v['uid']}">{$v["uname"]}</a>
+	                        {/if}
+	                    </div>
+	                    <div class="col-sm-2 photoes times">
+	                       <span>发表时间:{$v["stime"]}</span>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="line"></div>
+	            <!--具体的内容-->
+	            <ul class="mui-table-view clearmoren mui-table-view-cell" style="max-height: 126px;">
+	                <li class="mui-table-view-cell mui-media">
+	                    <!--<a href="index.php?m=index&f=index&a=show&id={$v['sid']}">-->
+	                        <div class="mui-media-body">
+	                        	<img style="width: 25px;height:30px;margin-right: 10px;" src="{IMG_PATH}/title.png" alt="" />
+	                       		<span class="stitle"><a href="index.php?m=index&f=index&a=show&id={$v['sid']}">{$v["stitle"]}</a></span>
+	                            <p style="text-indent:2em" class=" scon" >{$v["scon"]}</p>
+	                        </div>
+	                    </a>
+	                </li>
+	            </ul>
+	            {$i=0}
+	            {foreach $dianzan as $x}
+	            {if $x["sid"]==$v["sid"]}
+	            {$i=$x["good"]}
+	            {/if}
+	            {/foreach}
+        		<a href="javascript:;" class="dianzan"  sid="{$v['sid']}" style="font-size: 12px;color:#666;float: right;margin:11px 50px;margin-left: 10px;">赞 <span style="font-size: 13px;color:#666;">{$i}</span></a>
+            	<a href="index.php?m=index&f=index&a=show&id={$v['sid']}" style="font-size: 12px;color:#666;float: right;margin:12px 0px;">阅读全文</a>
+                
+	        </div>
+            {/foreach}
+        </div>
+    </div>
+</div>
+<div class="footer">
+	<div class="write">
+		<img src="{IMG_PATH}/timgs.jpg" alt="">
+	</div>
+	<div class="info">
+		<a href="#">青轻飞扬</a>
+		<p>没有伞的孩子必须努力奔跑！</p>
+	</div>
+	<div class="Copyright">
+		<ul class="link">
+		<li>帮助中心</li>
+		<li>|</li>
+		<li>空间客服</li>
+		<li>|</li>
+		<li>投诉中心</li>
+		<li>|</li>
+		<li>空间协议</li>
+	   </ul>
+	</div>
+	<p class="des">Design by DanceSmile</p>
+</div>
+   <div class="mask"> </div>
+   {include file="index/notice.html"}
+   <div class="notice">操作成功</div>
+	</body>
+</html>

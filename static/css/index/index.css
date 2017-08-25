@@ -1,0 +1,258 @@
+.header{
+	width:100%;
+	height:54px;
+	border-bottom:1px solid #ddd;
+	box-sizing: border-box;
+	line-height: 54px;
+	background:#fff;
+	box-shadow: 0 0 6px #ccc;
+}
+.top_h{
+	width: 1070px;height: 100%;margin: 0 auto;
+}
+.top_h>.shouye{
+	font-size:20px;
+	color:#EA6F5A;
+}
+.top_h>.right{
+	width:auto;
+	height:100%;
+	float:right;
+}
+.top_h>.right>li{
+	float: left;
+	width:auto;
+	height:100%;
+	margin-right:20px;
+	color:#999;
+}
+.top_h>.right>li>a{
+	display: block;
+	font-size:14px;
+	color:#999;
+}
+.top_h>.right>li>img{
+	width:40px;
+	height: 40px;
+	border-radius: 50%;
+	line-height:60px ;
+	box-shadow: 0 0 6px #ccc;
+	vertical-align: middle;
+}
+.top_h>.right>li>a:hover{
+	color:#EA6F5A;
+}
+/*body*/
+.mui-slider>.mui-slider-group>.imgSize{
+	width:1070px;
+	height:300px;
+	overflow: hidden;
+}
+	
+
+.main{
+    margin-top:20px;
+    width:1100px;
+    background: #F7F7F7;
+}
+.main-left{
+  width: 300px;padding: 0;
+  box-shadow: 0px 0px 10px #ddd;
+}
+.main-right{
+   width:800px;background: #fff;overflow: hidden;
+   box-shadow: 0px 0px 10px #ddd;
+}
+.line{
+    width:100%;height:1px;
+    background: #E1E1E1;
+    margin-top: 5px;
+}
+.photo{
+	width:50px;
+	height: 50px;
+	border-radius: 50%;
+	overflow: hidden;
+	float: left;
+}
+.photo>img{
+	width: 50px;
+	height: 50px;
+	float: left;
+}
+.row{
+	font-size: 12px;
+	color:#999;
+}
+.row>.col-sm-2{
+	margin-top:16px;
+}
+.row>.col-sm-2>a{
+	color:#999;
+	text-decoration: none;
+}
+.col-sm-4>span{
+	cursor: pointer;
+}
+.col-sm-4>span:hover{
+	color:#EA6F5A;
+}
+.photoes{
+	margin-left:20px;
+}
+.row>.username>a{
+	color:#666;
+	font-size:14px ;
+}
+.photoes{
+	width:50%;
+	position: absolute;
+	left:50px;
+}
+.times{
+	position: absolute;
+	left:510px;
+}
+.times span{
+	font-size: 14px;
+}
+.stitle{
+	font-size: 16px;
+	color:#000;
+	font-weight: bold;
+}
+.scon{
+	margin-top:10px ;
+}
+
+.clearmoren{
+	background:#fff ;
+	padding-left: 0;
+	padding-bottom: 0;
+}
+.usercon{
+	margin-top:40px;
+}
+.mui-table-view-cell:after{
+	height:0;
+}
+.mui-table-view-cell>a:hover{
+	color:#000;
+}
+
+.main-left{
+	border-right:0;
+}
+.header>.right>li>.button{
+	margin-top:12px;
+	color:#fff;
+	font-size: 12px;
+	margin-left:-28px;
+}
+.mask{
+    width:100%;height:100%;
+    background:rgba(0,0,0,0.8);
+    position: fixed;left:0;top:0;
+    z-index: 1000;
+    display: none;z-index: 99;
+}
+.notice{
+	width: 200px;height: 100px;background:url("../../images/tishi.png");
+	position: fixed;right: 0;bottom:0px;top:0;left:0;margin:auto;text-align: center;line-height: 80px;color: #fff;
+    display: none;
+}
+.top{
+	width:100%;
+	height: 250px;
+	position: relative;
+}
+.photoimg{
+	width:160px;
+	height: 160px;
+	border-radius: 50%;
+	position: absolute;
+	top:30px;right:0px;left:0;
+	margin: auto;
+	overflow: hidden;
+	
+}
+.photoimg:hover .names{
+	bottom:0;
+}
+.photoimg img:hover{
+	transform:scale(1.1);
+}
+.photoimg img{
+	width:160px;
+	height: 160px;transition: transform .8s linear;
+}
+.yulu{
+	width: 100%;
+	position: absolute;
+	left:0;bottom:10px;
+	font-size: 10px;text-align: center;
+}
+.jiyu{
+	width:100%;height:138px;background:#f16e50;overflow:hidden;color:#fff;
+}
+.jiyu h1{
+	font-size: 16px;
+    line-height: 40px;
+    padding-left: 30px;padding-top: 30px;
+}
+.jiyu p{
+	display: block;
+	padding-left: 30px; line-height: 40px;
+	color:#fff;font-size: 12px;
+}
+.names{
+	width: 160px;height: 60px;background: rgba(0,0,0,0.5);position: absolute;left: 0;bottom:-60px;
+    text-align: center;line-height: 60px;font-size: 14px;color:#fff;transition: bottom .5s linear;
+}
+.list-group{
+	margin:0;
+}
+.active{
+	display:block;width:100%;height:50px;background:none ;border:0;color: #f16e50;font-size: 16px;line-height:50px;padding-left:16px;border-radius:none ;
+}
+.active:hover{
+	background: none;color:#f16e50;
+}
+.list-group-item{
+	background:#fff;font-size: 14px;
+}
+/*footer*/
+.footer{
+	width: 100%;
+	height:200px;
+	margin-top:40px;
+	border-top: 9px solid #f16e50;    
+    background: #242221;
+    position: relative;
+}
+.write{
+	width:100px;height: 100px;border: 6px solid #f16e50;position: absolute;left:25%;top:-40px;
+}
+.write img{
+    width: 100%;height: 100%;
+}
+.info{
+	width:auto;height: 50px;position: absolute;left:35%;top:10px;
+}
+.info a{
+	color: #f16e50;
+}
+.Copyright{
+	width: 1100px;height:20px;text-align: center;
+    color: #959595;
+    margin:0px auto;margin-top: 130px;
+}
+.link{
+	width:320px;height:100%;margin:0 auto;
+}
+.link li{
+	float: left;padding: 0 5px;color:#f16e50;
+}
+.footer .des{
+	width: 1100px;margin:0px auto;margin-top: 10px;text-align: center;
+}
